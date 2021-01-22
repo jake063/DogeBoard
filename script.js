@@ -31,6 +31,16 @@ function appendData(data) {
 
   const tagButtons = data[i].tags.map((tag) => {
     const tagButton = document.createElement("button");
+    tagButton.onclick = () => {
+      const filterCards = cards.filterd((card) => {
+        return (
+          card.tags.find((tag) => {
+            return tag.includes(tagButton.innerHTML);
+          }) !== undefined
+        );
+      });
+      appendData(filterCards);
+    };
     tagButton.innerHTML = tag;
     return tagButton;
   });
@@ -39,4 +49,22 @@ function appendData(data) {
     tagContainer.appendChild(tagButton);
     }
   }
+}
+
+var card = document.createElement("div")
+card.className = "card";
+
+function filterTags() {
+  var searchTerm = document.getElementById("searchInput").value;
+  document.getElementById("searchResults").innerHTML = "you searched for:" + searchTerm;
+
+  const searchTermLower = searchTerm.tolowercase();
+    return(
+      card.tag.find((tag) => {
+        const tagLower = tag.toLowerCase();
+        return tagLower.includes(searchTermLower);
+      }) !== undefined
+    );
+});
+appendData(filtercards);
 }
