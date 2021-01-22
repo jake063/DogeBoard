@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>My imageboard</title>
+	<title>My Imageboard</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnnect" href="https://fonts.google.com" />
   <link 
@@ -17,9 +17,14 @@
     <h1 class="header">My Imageboard</h1>
     <div class="searchContainer">
       <label class="searchLabel">search</label>
-      <imput class="searchImput" />
-      <p class="searchResults"></p>
-      <button class="newCardButton">add a card</button>
+      <imput 
+        type="text"
+        id="searchImput"
+        class="searchImput"
+        oninput="filterTags()"
+      />
+      <p id="searchResult" class="searchResults"></p>
+      <button id="newCardButton" class="newCardButton">add a card</button>
     </div>
     <div class="cardContainer">
       <div class="card">
@@ -30,6 +35,8 @@
       </div>
     </div>
 <script type="text/javascript" scr="script.js"></script>
+
+
 
 </body>
 
