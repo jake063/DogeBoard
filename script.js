@@ -5,13 +5,13 @@ fetch("data.json")
     return response.json();
   })
   .then(function (data) {
-      card = data;
-      appendData(cards);
+    card = data;
+    appendData(cards);
   })
-  .ctach(function(err) {
-      console.log(err);
+  .catch(function (err) {
+    console.log(err);
   });
-  
+
 function appendData(data) {
   var cardContainer = document.getElementById("cardContainer");
   cardContainer.innerHTML = "";
@@ -20,7 +20,7 @@ function appendData(data) {
     var card = document.createElement("div");
     card.classname = "card";
     cardContainer.appendChild(card);
-    
+
     var img = document.createElement("img");
     img.src = data[i].src;
     card.appendChild(img);
@@ -29,24 +29,24 @@ function appendData(data) {
     tagContainer.className = "tagContainer";
     card.appendChild(tagContainer);
 
-  const tagButtons = data[i].tags.map((tag) => {
-    const tagButton = document.createElement("button");
-    tagButton.onclick = () => {
-      const filterCards = cards.filterd((card) => {
-        return (
-          card.tags.find((tag) => {
-            return tag.includes(tagButton.innerHTML);
-          }) !== undefined
-        );
-      });
-      appendData(filterCards);
-    };
-    tagButton.innerHTML = tag;
-    return tagButton;
-  });
-  for (tagButtons of tagButtons) {
-    tagButton.className = "tagbutton";
-    tagContainer.appendChild(tagButton);
+    const tagButtons = data[i].tags.map((tag) => {
+      const tagButton = document.createElement("button");
+      tagButton.onclick = () => {
+        const filterCards = cards.filterd((card) => {
+          return (
+            card.tags.find((tag) => {
+              return tag.includes(tagButton.innerHTML);
+            }) !== undefined
+          );
+        });
+        appendData(filterCards);
+      };
+      tagButton.innerHTML = tag;
+      return tagButton;
+    });
+    for (tagButtons of tagButtons) {
+      tagButton.className = "tagbutton";
+      tagContainer.appendChild(tagButton);
     }
   }
 }
@@ -59,18 +59,19 @@ function filterTags() {
   document.getElementById("searchResults").innerHTML = "you searched for:" + searchTerm;
 
   const searchTermLower = searchTerm.tolowercase();
-    return(
-      card.tag.find((tag) => {
-        const tagLower = tag.toLowerCase();
-        return tagLower.includes(searchTermLower);
-      }) !== undefined
-    );
-});
-appendData(filtercards);
-}
+  return (
+    card.tag.find((tag) => {
+      const tagLower = tag.toLowerCase();
+      return tagLower.includes(searchTermLower);
+    }) !== undefined
+  );
+};
+
+//appendData(filtercards);
+
 
 var newCardButton = document.getElementById("newCardButton");
-
+console.log(newCardButton)
 var newCardModal = document.getElementById("newCardModal");
 newCardButton.onclick = function () {
   newCardModal.style.display = "block";
@@ -86,3 +87,22 @@ window.onclick = function (event) {
     newCardModal.style.display = "none";
   }
 };
+
+function saveNewCard() {
+  var newImgSrc = document.getElementById("imgsrc").value;
+
+  var newTags = document.getElementById("tags").value.split(";")
+
+  var lastCardId = cards[cards.length - 1].id;
+
+  var newCard = {
+    id: lastCardId + 1,
+    src: newImgSrc,
+    tags: newTags,
+  };
+
+  cards = [...cards, newCard];
+  appendData(cards);
+
+  newCardModal.style.display = "none"
+}
