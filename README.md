@@ -1,15 +1,2 @@
-# Pinboard Front-end Project
-
-![](https://docs.repl.it/images/teamsForEducation/PinboardProject/moodboard.gif)
-
-The goal of this project is to create a "pinboard" of images that you can collect, categorise with tags and reflect on later.
-
-You will be able to create new cards with custom tags and then filter tags via the search bar or by clicking on a tag.
-
-## Tutorial
-
-You can follow along with the tutorial found in the Course Pack on Canvas.
-
-## Update This Readme
-
-Once you have completed this tutorial, update this Readme to reflect the app you have created.
+# Why Doge?
+Because...why not doge. In reality, I wanted to do "doge" Because doge is a staple of memes, and I love memes. Doge is so recognizable in the meme community that even if you hate doge, you know he was and still is an ever-evolving meme. Like cancer, he keeps evolving and changing and mutating into different forms.

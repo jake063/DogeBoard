@@ -1,19 +1,19 @@
 html {
-  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   width: 80rem;
   margin: 0 auto;
-  background-color: #f5afaf;
+  background-color: #ebd65f;
 }
 
 h1 {
   font-size: 4rem;
   text-align: center;
-  font-family: "Bungee Shade", cursive;
-  color: #fc47bb;
-  text-shadow: 0 0 5px #fc47bb;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #e9b303;
+  text-shadow: 0 0 5px #dba902;
 }
 
 .searchContainer {
@@ -30,7 +30,7 @@ h1 {
 .searchInput {
   height: 2rem;
   width: 25rem;
-  box-shadow: 0 0 5px #fc47bb;
+  box-shadow: 0 0 5px #ce9700;
   font-family: "Montserrat", sans-serif;
   margin: 0 0.2rem;
 }
@@ -61,10 +61,10 @@ img {
 }
 
 .card {
-  background-color: #f7c5c5;
+  background-color: #eccd18;
   margin: 0.5rem;
   max-width: 30rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(236, 216, 125, 0.2);
   transition: 0.3s;
   border-radius: 5px;
 }
@@ -73,7 +73,7 @@ img {
   justify-content: center;
 }
 .tagButton {
-  text-shadow: 0 0 5px #fc47bb;
+  text-shadow: 0 0 5px #f1cf47;
   font-family: "Montserrat", sans-serif;
   font-size: medium;
   margin: 0.5rem;
@@ -131,7 +131,7 @@ select {
 /* Style the submit button */
 .submitButton {
   width: 100%;
-  background-color: #fc47bb;
+  background-color: #fcd247;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -142,5 +142,5 @@ select {
 
 /* Add a background color to the submit button on mouse-over */
 .submitButton :hover {
-  background-color: #b92985;
+  background-color: #b9a329;
 }
